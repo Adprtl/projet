@@ -1,0 +1,95 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.main-navbar {
+  background-color: #333;
+}
+.main-navbar .navbar {
+  background-color: #333 !important;
+  color: #fff;
+  padding: 16px !important;
+}
+.main-navbar a.navbar-brand {
+  color: #fff;
+  font-size: 26px;
+  font-weight: bold;
+}
+.main-navbar a.navbar-brand:hover {
+  color: #fff;
+}
+.main-navbar .nav-item > a {
+  color: #fff !important;
+  transition: all 0.3s ease;
+}
+.main-navbar .nav-item > a:hover, .main-navbar .nav-item.active > a {
+  color: #339999 !important;
+}
+
+button.navbar-toggler {
+  background-color: #fff;
+}
+
+
+/* page connexion */
+
+.signin{
+
+  background-color:#333;
+  color : white;
+  width: 50vw;
+  margin-left: 25vw;
+  padding: 50px;
+  text-align: center;
+  border-radius: 20px;
+  margin-top: 10vh;
+
+}
+
+.txtinput {
+  background: none !important;
+  border: none;
+  border-bottom: 3px solid #fff;
+  transition: all 0.5s ease;
+  width: 80%;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.txtinput:focus {
+  background: none !important;
+  outline: none;
+  border-bottom: 3px solid rgb(10, 184, 117);
+}
+
+.txtinput::placeholder {
+  color: rgb(170, 170, 170);
+  font-size: .9em;
+}
+
+
+.submitbtn {
+  margin-top: 10px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  color: black;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.submitbtn:hover {
+  transition: all 0.5s ease;
+  background-color: rgb(10, 184, 117);
+}
+
+@media (max-width:699px) {
+  .signin {
+      width: 80vw !important;
+      margin-left: 10vw;
+  }
+}
