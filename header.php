@@ -15,7 +15,7 @@
                 </ul>
                 <?php
         if (isset($_SESSION['Mail'])) {
-            echo '<li class="list-item">Bonjour'.$_SESSION['Mail'].'</li>';
+            echo '<li class="list-item">Bonjour '.$_SESSION['Mail'].'</li>';
             echo '<li class="list-item"><a href="deconnexion.php">Deconnexion</a></li>';
         }else{
             echo '<li class="list-item">

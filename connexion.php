@@ -41,7 +41,6 @@ if ($recipes1 == TRUE){
 
             $tokenData = "{$email}#{$uniqId}#{$time}";
             $token = hash('sha512', $tokenData);
-
             $remember = isset($_POST['TOKEN']);
             $cookieData = "{$email}---{$token}";
             $cookieExpire = time() + 3600 * 24 * 7; // 7 jours
