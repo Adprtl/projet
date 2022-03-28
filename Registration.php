@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="style.css" rel="stylesheet">
     <link href="signup.css" rel="stylesheet">
-    <title>Sign Up</title>
+    <title>Création Etudiant</title>
 </head>
 
 <body>
@@ -35,9 +35,6 @@
                 <label for="email">Email</label><br>
                 <input onblur="mailv(),buttona();" class="txtinput" type="email" id="email" name="emailname" placeholder="Email" />
                 <span class="error" id="errormail"></span></br>
-
-
-               
             
                 <div class="passlab"><label for="pass">Mot de passe *</label><span class="passinfo">Majuscules, Minuscules, Nombres, Caractères spéciales</span><br></div>
                 <input onblur="passv(),buttona();" class="txtinput" type="password" id="pass" name="passname" placeholder="........" />
@@ -47,15 +44,37 @@
                 <label for="conirfmpass">Confirmation mot de passe</label><br>
                 <input onblur="cpassv(),buttona();" class="txtinput" type="password" id="conirfmpass" name="confirmpassname" placeholder="........" /><br>
 
-               
+                                <select name="selectCentre">
+                        <option value="Aucune">centre</option>
+                        <?php
+                        include "connexionbdd.php";
+                            $requeteCentre = "SELECT * FROM centre";
+                            $reponseCentre = $pdo->query($requeteCentre);
+                            $afficheCentre= $reponseCentre->fetchAll();
+                            foreach($afficheCentre as $aE){
+                                echo '<option value="' . $aE['ID_Centre'] .'">' . $aE['Nom_Centre']. '</option>';
+                            }
+                        ?>
+                        </select>
+                        <select name="selectPromotion">
+                        <option value="Aucune">Promotion</option>
+                        <?php
+                        include "connexionbdd.php";
+                            $requetePromotion = "SELECT * FROM promotion";
+                            $reponsePromotion = $pdo->query($requetePromotion);
+                            $affichePromotion = $reponsePromotion->fetchAll();
+                            foreach($affichePromotion as $aE){
+                                echo '<option value="' . $aE['ID_Promotion'] .'">' . $aE['Nom_Promotion']. '</option>';
+                            }
+                        ?>
+                        </select>
+                                
 
-                
-           
                 
                 <span class="error" id="errorpass2"></span>
                 <br>
                 
-                <input type="submit" class="submitbtn" id="valider" placeholder="SIGN UP" disabled="" ; />
+                <input type="submit" class="submitbtn" id="valider" placeholder="SIGN UP" disabled="" value = "Envoyer" ; />
             </form>
         </div>
 
