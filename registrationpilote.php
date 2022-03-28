@@ -22,7 +22,7 @@
         <div id="signup" class="signup">
 
             <form action="registerpilote.php" method="POST">
-                <h2>Sign Up</h2>
+                <h2>Création Pilote</h2>
                 <label for="pseudo">Identifiant </label><br>
                 <input type="text" id="pseudo" name="pseudoname" class="txtinput" placeholder="Entre ton Identifiant" autofocus />
                 <br>
