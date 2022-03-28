@@ -40,11 +40,11 @@
 }
 
 h2 {
-    color: black;
+    color: rgb(10, 184, 117);
     margin-left: 30%;
     width: 40%;
     margin-bottom: 30px;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid rgb(10, 184, 117);
 }
 
 .submitbtn {

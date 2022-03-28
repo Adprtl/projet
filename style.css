@@ -49,6 +49,14 @@ button.navbar-toggler {
 
 }
 
+h2 {
+  color: rgb(10, 184, 117);
+  margin-left: 30%;
+  width: 40%;
+  margin-bottom: 30px;
+  border-bottom: 1px solid rgb(10, 184, 117);
+}
+
 .txtinput {
   background: none !important;
   border: none;
