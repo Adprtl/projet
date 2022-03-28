@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="style.css" rel="stylesheet">
     <link href="signup.css" rel="stylesheet">
-    <title>Création Etudiant</title>
+    <title>Création Pilote</title>
 </head>
 
 <body>
@@ -21,7 +21,7 @@
     <main>
         <div id="signup" class="signup">
 
-            <form action="registeretudiant.php" method="POST">
+            <form action="registerpilote.php" method="POST">
                 <h2>Sign Up</h2>
                 <label for="pseudo">Identifiant </label><br>
                 <input type="text" id="pseudo" name="pseudoname" class="txtinput" placeholder="Entre ton Identifiant" autofocus />

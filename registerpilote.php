@@ -10,7 +10,7 @@ if (isset($_REQUEST['emailname']) && !empty($_REQUEST['emailname'])){
     $count = $resemail->rowCount();
 
         if ($count != 0){
-            header('Location:Registrationetudiant.php?err=2');
+            header('Location:registrationpilote.php?err=2');
         }else{
             //echo 'ça passe ici';
             if ( isset($_REQUEST['pseudoname']) && isset($_REQUEST['nomname']) && isset($_REQUEST['prenomname']) && isset($_REQUEST['passname'])  && isset($_REQUEST['selectCentre']) and !empty($_REQUEST['pseudoname'])  && !empty($_REQUEST['nomname'])  && !empty($_REQUEST['prenomname'])  && !empty($_REQUEST['passname']) && !empty($_REQUEST['selectCentre'])){
@@ -23,20 +23,20 @@ if (isset($_REQUEST['emailname']) && !empty($_REQUEST['emailname'])){
                 $pass =htmlentities($_REQUEST['passname']) ;
                 
                // $hashed_password = password_hash($pass, PASSWORD_BCRYPT);
-                $req1 = 'INSERT INTO etudiant (ID_Centre,ID_Promotion) VALUES (:selectCentre,:selectPromotion);';
+                $req1 = 'INSERT INTO pilote (ID_Centre,ID_Promotion) VALUES (:selectCentre,:selectPromotion);';
 
                 $query = $pdo->prepare($req1);
                 $query->bindValue(':selectCentre',$centre, PDO::PARAM_STR);
                 $query->bindValue(':selectPromotion',$promotion, PDO::PARAM_STR);
                 $query->execute();
 
-                $req2 = 'SELECT Max(ID_Etudiant) As id from etudiant';
+                $req2 = 'SELECT Max(ID_Pilote) As id from pilote';
 
                 $recipesStatement1 = $pdo->prepare($req2);
                 $recipesStatement1->execute();
                 $recipes1 = $recipesStatement1->fetchAll();
 
-                $req = 'INSERT INTO `utilisateur`(`Identifiant`,`Nom`,`Prenom`, `Mail`, `Password`, ID_Etudiant) VALUES (:pseudo,:nom,:prenom,:email,:pass,'.$recipes1[0]['id'].');';
+                $req = 'INSERT INTO `utilisateur`(`Identifiant`,`Nom`,`Prenom`, `Mail`, `Password`, ID_Pilote) VALUES (:pseudo,:nom,:prenom,:email,:pass,'.$recipes1[0]['id'].');';
 
                 $query = $pdo->prepare($req);
                 $query->bindValue(':pseudo',$pseudo, PDO::PARAM_STR);
@@ -49,7 +49,7 @@ if (isset($_REQUEST['emailname']) && !empty($_REQUEST['emailname'])){
                 
             }
             else{
-                header('Location:Registration.php?err=1');
+                header('Location:registrationpilote.php?err=1');
             }
             
         }
