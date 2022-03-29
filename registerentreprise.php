@@ -11,30 +11,41 @@ if (isset($_REQUEST['emailname']) && !empty($_REQUEST['emailname'])){
     $count = $resemail->rowCount();
 
         if ($count != 0){
-            header('Location:registrationpilote.php?err=2');
+            header('Location:registrationentreprise.php?err=2');
         }else{
-if ( isset($_REQUEST['pseudoname']) && isset($_REQUEST['nomname']) and !empty($_REQUEST['pseudoname'])  && !empty($_REQUEST['nomname'])){
+    if ( isset($_REQUEST['nomname']) && isset($_REQUEST['emailname']) && isset($_REQUEST['secteurname']) && isset($_REQUEST['stagiairename'])  and !empty($_REQUEST['nomname']) && !empty($_REQUEST['emailname'])&& !empty($_REQUEST['secteurname']) && !empty($_REQUEST['stagiairename'])){
 
 
-$nom = htmlentities($_REQUEST['nomname']);
-$prenom = htmlentities($_REQUEST['prenomname']);
+    $nom = htmlentities($_REQUEST['nomname']);
+    $email = htmlentities($_REQUEST['emailname']);
+    $secteur = htmlentities($_REQUEST['secteurname']);
+    $stagiaire= htmlentities($_REQUEST['stagiairename']);
+    
+    if (isset($_REQUEST['visibilitename'])){
+     $visibilite= htmlentities(1);
+
+    }
+    else{
+        $visibilite= htmlentities(0);
+    }
+
+    $req = 'INSERT INTO `entreprise`(`Nom_Entreprise`, `Mail`, `Secteur_activite`, `Stagiaire_CESI_accepte`, `Invisible_Etudiant`) VALUES (:nom,:email,:secteur,:stagiaire,:visibilite);';
+
+    
+    $query = $pdo->prepare($req);
+    $query->bindValue(':secteur',$secteur, PDO::PARAM_STR);
+    $query->bindValue(':nom',$nom, PDO::PARAM_STR);
+    $query->bindValue(':email',$email, PDO::PARAM_STR);
+    $query->bindValue(':stagiaire',$stagiaire, PDO::PARAM_STR);
+    $query->bindValue(':visibilite',$visibilite, PDO::PARAM_STR);
+    $query->execute();
 
 
 
-
-$req = 'INSERT INTO `utilisateur`(`Identifiant`,`Nom`,`Prenom`, `Mail`, `Password`, ID_Pilote) VALUES (:pseudo,:nom,:prenom,:email,:pass,'.$recipes1[0]['id'].');';
-
-
-$query = $pdo->prepare($req);
-$query->bindValue(':pseudo',$pseudo, PDO::PARAM_STR);
-$query->bindValue(':nom',$nom, PDO::PARAM_STR);
-$query->bindValue(':prenom',$prenom, PDO::PARAM_STR);
-
-$query->execute();
 
 }else{
-
-
+        // header('Location:Registration.php?err=1');
+        echo 'a';
         }
     }
 }

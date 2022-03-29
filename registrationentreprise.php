@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="style.css" rel="stylesheet">
     <link href="signup.css" rel="stylesheet">
-    <title>Création Pilote</title>
+    <title>Création Entreprise</title>
 </head>
 
 <body>
@@ -21,7 +21,7 @@
     <main>
         <div id="signup" class="signup">
 
-            <form action="registerpilote.php" method="POST">
+            <form action="registerentreprise.php" method="POST">
                 <h2>Création Entreprise</h2>
                 <label for="nom">Nom Entreprise</label><br>
                 <input type="text" id="nom" name="nomname" class="txtinput" placeholder="Entre ton nom" autofocus />
@@ -29,12 +29,16 @@
                 <label for="email">Email</label><br>
                 <input onblur="mailv(),buttona();" class="txtinput" type="email" id="email" name="emailname" placeholder="Email" />
                 <span class="error" id="errormail"></span></br>
-                <label for="prenom">Prenom ? </label><br>
-                <input type="text" id="prenom" name="prenomname" class="txtinput" placeholder="Entre ton prenom" autofocus />
+                
+                <label for="secteur">Secteur d'activité </label><br>
+                <input type="text" id="secteur" name="secteurname" class="txtinput" placeholder="Secteur d'activité" autofocus />
                 <br>
-
-
-                <span class="error" id="errorpass2"></span>
+                <label for="stagiaire">Stagiaire accepté </label><br>
+                <input type="number" min="0" id="stagiaire" name="stagiairename" class="txtinput" placeholder="Nombre accepté" autofocus />
+                <br>
+                <br>
+                <label for="visibilite">Invisible étudiant</label><br>
+                <input type="checkbox"  id="visibilite" name="visibilitename" class="txtinput"  autofocus />
                 <br>
                 
                 <input type="submit" class="submitbtn" id="valider" placeholder="SIGN UP" disabled="" value = "Envoyer" ; />
@@ -61,6 +65,7 @@
             validationmail = 1;
         }
     }
+    const button = document.getElementById('valider');
 
     function buttona() {
         if ((validationmail) == 1) {
