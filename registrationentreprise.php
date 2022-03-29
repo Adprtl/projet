@@ -15,7 +15,7 @@
 <body>
     <header class="container-fluid main-navbar">
        <?php
-         include "header.php"
+        //  include "header.php"
        ?>
     </header>
     <main>
@@ -41,6 +41,7 @@
                 <br>
                 <label for="ville">Ville</label><br>
                 <select name="selectville" id ="Ville">
+                   
                 </select>
                 <br>
                 <br>
