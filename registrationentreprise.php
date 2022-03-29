@@ -15,7 +15,7 @@
 <body>
     <header class="container-fluid main-navbar">
        <?php
-        //  include "header.php"
+          include "header.php"
        ?>
     </header>
     <main>

@@ -23,6 +23,7 @@ if ($recipes1 == TRUE){
     $_SESSION['Mail'] = $email;
     $_SESSION['ID_Administrateur'] = $recipes1[0]['ID_Administrateur'];   
     $_SESSION['ID_Pilote'] = $recipes1[0]['ID_Pilote'];   
+    $_SESSION['ID_Etudiant'] = $recipes1[0]['ID_Etudiant'];
     
    setcookie(
        'Connexion',
