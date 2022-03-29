@@ -36,6 +36,13 @@
                 <label for="stagiaire">Stagiaire accepté </label><br>
                 <input type="number" min="0" id="stagiaire" name="stagiairename" class="txtinput" placeholder="Nombre accepté" autofocus />
                 <br>
+                <label for="cp">Code postal</label><br>
+                <input type="text" maxlength ="5"  id="cp" name="cpname" class="txtinput" placeholder="Code Postal" autofocus />
+                <br>
+                <label for="ville">Ville</label><br>
+                <select name="selectville" id ="Ville">
+                </select>
+                <br>
                 <br>
                 <label for="visibilite">Invisible étudiant</label><br>
                 <input type="checkbox"  id="visibilite" name="visibilitename" class="txtinput"  autofocus />
@@ -51,6 +58,29 @@
 
 </html>
 <script>
+
+var caseCodePostal = document.getElementById("cp")
+var caseVille = document.getElementById("Ville")
+
+caseCodePostal.addEventListener("input", recupererVilles)
+
+function recupererVilles() {
+    if (caseCodePostal.value.length == 5) {
+        fetch("https://apicarto.ign.fr/api/codes-postaux/communes/"+caseCodePostal.value+"").then((response) => response.json().then((data) =>
+            {
+            while (caseVille.getElementsByTagName("option")[0]) {
+                caseVille.removeChild(caseVille.getElementsByTagName("option")[0])
+            }
+            for (let ville of data) {
+                console.log(ville.nomCommune);
+                caseVille.options[caseVille.options.length] = new Option (ville.nomCommune);
+            }
+        })
+        )
+    }
+}
+
+
     var validationmail = 0;
    
 
