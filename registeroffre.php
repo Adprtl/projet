@@ -22,6 +22,8 @@ if( isset($_REQUEST['refname']) && isset($_REQUEST['dureename']) && isset($_REQU
   $query->bindValue(':selectEntreprise',$entreprise, PDO::PARAM_STR);
   $query->execute();
 
+  
+
 
 }else{
     echo "a";

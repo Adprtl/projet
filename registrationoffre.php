@@ -38,7 +38,6 @@
                         </select>
                             <br>
                             <br>
-
                 <label for="ref">Reference</label><br>
                 <input type="text" maxlength ="5"  id="ref" name="refname" class="txtinput" placeholder="Reference" autofocus />
                 <br>
