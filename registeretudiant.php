@@ -2,7 +2,7 @@
 include "connexionbdd.php";
 if (isset($_REQUEST['emailname']) && !empty($_REQUEST['emailname'])){
     $email = htmlentities($_REQUEST['emailname']);
-    $reqverifemail =  'SELECT Mail FROM utilisateur WHERE Mail="'.$email.'";';
+    $reqverifemail =  'SELECT Mail FROM utilisateur WHERE Mail="'.$email.' ";';
 
     
     $resemail = $pdo->query($reqverifemail);

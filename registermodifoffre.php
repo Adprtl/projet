@@ -8,9 +8,9 @@ if( isset($_REQUEST['refname']) && isset($_REQUEST['dureename']) && isset($_REQU
     $datededebut = htmlentities($_REQUEST['datedebutname']);
     $nombre = htmlentities($_REQUEST['nombrename']);
     $description = htmlentities($_REQUEST['descrptionname']);
-    $entreprise = htmlentities($_REQUEST['selectEntreprise']);
+    $id = htmlentities($_REQUEST['idname']);
 
-  $req = 'INSERT INTO `offre_de_stage`( `Reference`, `Duree_Stage`, `Date_Debut`, `Date_Offre`, `Nombre_Place`, `Description_Offre`,ID_Entreprise) VALUES (:ref,:duree,:datedebut,DATE(NOW()),:nombre,:descriptiono,:selectEntreprise);';
+  $req = 'UPDATE `offre_de_stage` SET `Reference`= :ref ,`Duree_Stage`= :duree,`Date_Debut`=:datedebut,`Nombre_Place`=:nombre,`Description_Offre`=:descriptiono where ID_Offre_de_stage = :valider;';
 
 
   $query = $pdo->prepare($req);
@@ -19,10 +19,12 @@ if( isset($_REQUEST['refname']) && isset($_REQUEST['dureename']) && isset($_REQU
   $query->bindValue(':datedebut',$datededebut, PDO::PARAM_STR);
   $query->bindValue(':nombre',$nombre, PDO::PARAM_STR);
   $query->bindValue(':descriptiono',$description, PDO::PARAM_STR);
-  $query->bindValue(':selectEntreprise',$entreprise, PDO::PARAM_STR);
+  $query->bindValue(':valider',$id, PDO::PARAM_STR);
   $query->execute();
-  header('Location:controlOffre.php');
+  //header('Location:controlOffre.php');
+  echo $_POST['idname'];
   
+
 
 
 }else{

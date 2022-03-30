@@ -21,16 +21,18 @@
     <main>
         <div id="signup" class="signup">
 
-            <form action="registeroffre.php" method="POST">
+            <form action="registermodifoffre.php" method="POST">
                 <h2>Création Offre</h2>
-
+                    
                 <?php
+                       
                         include "connexionbdd.php";
-                            $requetePromotion = "SELECT * FROM offre_de_stage where ID_Offre_de_stage =$_POST[modifOffre]";
+                            $requetePromotion = "SELECT * FROM offre_de_stage where ID_Offre_de_stage =".$_POST['modifOffre'];
                             $reponsePromotion = $pdo->query($requetePromotion);
                             $affichePromotion = $reponsePromotion->fetchAll();
                         ?> 
                            
+                      
                 <label for="ref">Reference</label><br>
               
                 <input type="text" maxlength ="5"  id="ref" name="refname" class="txtinput" placeholder="Reference"  value ="<?php echo $affichePromotion[0]["Reference"] ?>"autofocus />
@@ -51,7 +53,7 @@
                     
                 
 
-                <input type="submit" class="submitbtn" id="valider" placeholder="SIGN UP"  value = "Envoyer" ; />
+                <button type="submit" class="submitbtn" id="valider" placeholder="SIGN UP"  name = "idname" value=<?php echo $_POST['modifOffre'];?>>Envoyer</button>
                 </form>
         </div>
 

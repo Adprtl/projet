@@ -33,7 +33,7 @@
 </head>
 <body>
     <!--Bouton pour créer une offre de stage-->
-<a href="#"><button>Créer</button></a>
+<a href="registrationoffre.php"><button>Créer</button></a>
 
     <!--Formulaire de recherche-->
 <form method="POST">
@@ -90,8 +90,8 @@
                         echo '</h3>';
 
                         ?>
-                        <form method="POST"><button type="submit" name="modifOffre" value= <?php echo $rep->get_id(); ?> >Modifier</button><form>
-                        <form method="POST"><button type="submit" name="supprOffre" value= <?php echo $rep->get_id();; ?> >Supprimer</button><form>
+                        <form method="POST"  action="modificationoffre.php"> <button  type="submit"  name="modifOffre"  value= <?php echo $rep->get_id(); ?>> Modifier</button><form>
+                        <form method="POST"><button type="submit" name="supprOffre" value= <?php echo $rep->get_id(); ?> >Supprimer</button><form>
                             
                 </div>
                     </div><br>
