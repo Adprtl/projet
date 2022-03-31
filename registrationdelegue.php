@@ -21,7 +21,7 @@
     <main>
         <div id="signup" class="signup">
 
-            <form action="registerpilote.php" method="POST">
+            <form action="registerdelegue.php" method="POST">
                 <h2>Création Delegue</h2>
                 <label for="pseudo">Identifiant </label><br>
                 <input type="text" id="pseudo" name="pseudoname" class="txtinput" placeholder="Entre ton Identifiant" autofocus />
