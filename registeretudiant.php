@@ -21,7 +21,8 @@ if (isset($_REQUEST['emailname']) && !empty($_REQUEST['emailname'])){
                 $centre = htmlentities($_REQUEST['selectCentre']);
                 $promotion = htmlentities($_REQUEST['selectPromotion']);
                 $pass =htmlentities($_REQUEST['passname']) ;
-                
+                $competence = htmlentities($_REQUEST['selectCompetence']);
+                $competence2 = htmlentities($_REQUEST['selectCompetence2']);
                // $hashed_password = password_hash($pass, PASSWORD_BCRYPT);
                 $req1 = 'INSERT INTO etudiant (ID_Centre,ID_Promotion) VALUES (:selectCentre,:selectPromotion);';
 
@@ -47,6 +48,18 @@ if (isset($_REQUEST['emailname']) && !empty($_REQUEST['emailname'])){
                 $query->execute();
                // header('Location:login.php');
                 
+               $req3 = 'INSERT INTO `avoir`(`ID_Competence`,ID_Etudiant) VALUES (:selectCompetence,'.$recipes1[0]['id'].');';
+
+                $query = $pdo->prepare($req3);
+                $query->bindValue(':selectCompetence',$competence, PDO::PARAM_STR);
+                $query->execute();
+            
+                $req4 = 'INSERT INTO `avoir`(`ID_Competence`,ID_Etudiant) VALUES (:selectCompetence2,'.$recipes1[0]['id'].');';
+                  
+                $query = $pdo->prepare($req4);
+                $query->bindValue(':selectCompetence2',$competence2, PDO::PARAM_STR);
+                $query->execute();
+                // header('Location:login.php');
             }
             else{
                 header('Location:Registration.php?err=1');
