@@ -135,7 +135,7 @@
                             
                         ?>
                         </td>
-                        <td><form method="POST"><button name="modifCompte" value= <?php echo $rep->get_id(); ?>>Modifier</button></form></td>
+                        <td><form method="POST" action="modificationetudiant.php"><button name="modifCompte" value= <?php echo $rep->get_id(); ?>>Modifier</button></form></td>
                         <td><form method="POST"><button name="supprCompte" value= <?php echo $rep->get_id(); ?>>Supprimer</button></form></td>
                     </tr>
 

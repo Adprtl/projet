@@ -28,7 +28,7 @@
                    <?php
                        
                        include "connexionbdd.php";
-                           $requetePromotion = "SELECT * FROM utilisateur natural join etudiant where ID_Etudiant= 2 ";
+                           $requetePromotion = "SELECT * FROM utilisateur  where ID_Utilisateur = ".$_POST['modifCompte'];
                            $reponsePromotion = $pdo->query($requetePromotion);
                            $affichePromotion = $reponsePromotion->fetchAll();
                        ?> 
@@ -58,7 +58,7 @@
                 
                 <br>
                 
-                <input type="submit" class="submitbtn" id="valider" placeholder="SIGN UP"  value = "Envoyer" ; />
+                <button type="submit" class="submitbtn" id="valider" placeholder="SIGN UP"  name = "idname" value=<?php echo $_POST['modifCompte'];?>>Envoyer</button>
             </form>
         </div>
 
