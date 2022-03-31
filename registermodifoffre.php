@@ -22,7 +22,7 @@ if( isset($_REQUEST['refname']) && isset($_REQUEST['dureename']) && isset($_REQU
   $query->bindValue(':valider',$id, PDO::PARAM_STR);
   $query->execute();
   //header('Location:controlOffre.php');
-  echo $_POST['idname'];
+ 
   
 
 
