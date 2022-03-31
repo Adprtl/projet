@@ -84,7 +84,7 @@
                         echo '</h3>';
 
                         ?>
-                        <form method="POST"><button type="submit" name="modifEntreprise" value= <?php echo $rep->get_id(); ?> >Modifier</button><form>
+                        <form method="POST" action="modificationentreprise.php"><button type="submit" name="modifEntreprise" value= <?php echo $rep->get_id(); ?> >Modifier</button><form>
                         <form method="POST"><button type="submit" name="supprEntreprise" value= <?php echo $rep->get_id(); ?> >Supprimer</button><form>
                         <br><br><form method="POST"><select name="noter" id="idnoter">
                             <option value="0">0</option>
