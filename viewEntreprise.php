@@ -84,9 +84,10 @@
                         echo '</h3>';
 
                         ?>
-                        <form method="POST" action="modificationentreprise.php"><button type="submit" name="modifEntreprise" value= <?php echo $rep->get_id(); ?> >Modifier</button><form>
-                        <form method="POST"><button type="submit" name="supprEntreprise" value= <?php echo $rep->get_id(); ?> >Supprimer</button><form>
-                        <br><br><form method="POST"><select name="noter" id="idnoter">
+                        <div><form method="POST" action="modificationentreprise.php" name= "buttonmodif"><button type="submit" name="modifEntreprise" value= <?php echo $rep->get_id(); ?> >Modifier</button><form></div><br>
+                       <div> <form method="POST" name = "suppr" action =""><button type="submit" name="supprEntreprise" value= <?php echo $rep->get_id(); ?> >Supprimer</button><form></div>
+                        <br>
+                        <div><form method="POST" action = "self" name ="note"><select name="noter" id="idnoter">
                             <option value="0">0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -94,7 +95,7 @@
                             <option value="4">4</option>
                             <option value="5">5</option></select>
                             <button type="submit" id="identreprise" name="noteId" value=<?php echo $rep->get_id(); ?> >Noter l'entreprise</button>
-                    </form>
+                    </form></div>
                             
                 </div>
                     </div><br>

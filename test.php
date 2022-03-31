@@ -25,7 +25,8 @@ include "allvariable.php";
 <?php
   if (isset($_SESSION['Mail']) && (($_SESSION['ID_Pilote']!=0) || ($_SESSION['ID_Administrateur']!=0))){
 ?>
-<?php   echo '<h1>enue mon G</h1>';
+ <h1>bienvenue mon G</h1>;
+<?php   
     }else header('Location:index.php');
     ?>
 

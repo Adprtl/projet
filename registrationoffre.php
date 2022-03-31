@@ -53,7 +53,32 @@
                 <label for="ref">desciption</label><br>
                 <textarea type="text"  id="descriptiono" name="descrptionname" class="txtinput" placeholder="..." autofocus ></textarea>
                 <br>
-                    
+                <select name="selectCompetence">
+                        <option value="Aucune">Competence</option>
+                        <?php
+                        include "connexionbdd.php";
+                            $requeteCentre = "SELECT * FROM competence";
+                            $reponseCentre = $pdo->query($requeteCentre);
+                            $afficheCentre= $reponseCentre->fetchAll();
+                            foreach($afficheCentre as $aE){
+                                echo '<option value="' . $aE['ID_Competence'] .'">' . $aE['Type_Competence']. '</option>';
+                            }
+                        ?>
+                        </select>
+                        <select name="selectCompetence2">
+                        <option value="Aucune">Competence</option>
+                        <?php
+                        include "connexionbdd.php";
+                            $requeteCentre = "SELECT * FROM competence";
+                            $reponseCentre = $pdo->query($requeteCentre);
+                            $afficheCentre= $reponseCentre->fetchAll();
+                            foreach($afficheCentre as $aE){
+                                echo '<option value="' . $aE['ID_Competence'] .'">' . $aE['Type_Competence']. '</option>';
+                            }
+                        ?>
+                        </select>
+                          
+                <br>
                 
 
                 <input type="submit" class="submitbtn" id="valider" placeholder="SIGN UP"  value = "Envoyer" ; />
