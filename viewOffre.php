@@ -120,9 +120,9 @@
 
                 ?>
                 <form method="POST" action="modificationoffre.php"> <button class="btn btn-secondary" type="submit" name="modifOffre" value=<?php echo $rep->get_id(); ?>> Modifier</button>
-                    <form>
+            </form>
                         <form method="POST"><button type="submit" name="supprOffre" class="btn btn-danger" value=<?php echo $rep->get_id(); ?>>Supprimer</button>
-                            <form>
+            </form>
 
             </div>
         </div><br>

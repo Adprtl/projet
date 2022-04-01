@@ -11,7 +11,7 @@ function EvalEntreprise($id, $idE, $note){
 
 function SupprimerEntreprise($supprE){
     $bdd = Connexion();
-    $bdd->query("delete from entreprise where ID_Entreprise = ".$supprE);
+    $bdd->query("UPDATE `entreprise` SET `Nom_Entreprise`= NULL ,`Mail`=NULL,`Secteur_activite`=NULL,`Stagiaire_CESI_accepte`=NULL,`Invisible_Etudiant`= NULL WHERE ID_Entreprise = ".$supprE);
 }
 
 function MenuSecteur(){

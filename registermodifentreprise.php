@@ -19,6 +19,7 @@ include "connexionbdd.php";
                $query->bindValue(':stagiaire',$stagiaire, PDO::PARAM_STR);
                $query->bindValue(':valider',$id, PDO::PARAM_STR);
                $query->execute();
+            
            
                // header('Location:login.php');
 

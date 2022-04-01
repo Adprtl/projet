@@ -84,10 +84,10 @@
                         echo '</h3>';
 
                         ?>
-                        <div><form method="POST" action="modificationentreprise.php" name= "buttonmodif"><button type="submit" name="modifEntreprise" value= <?php echo $rep->get_id(); ?> >Modifier</button><form></div><br>
-                       <div> <form method="POST" name = "suppr" action =""><button type="submit" name="supprEntreprise" value= <?php echo $rep->get_id(); ?> >Supprimer</button><form></div>
+                        <div><form method="POST" action="modificationentreprise.php" name= "buttonmodif"><button type="submit" name="modifEntreprise" value= <?php echo $rep->get_id(); ?> >Modifier</button></form></div><br>
+                       <div> <form method="POST" ><button type="submit" name="supprEntreprise" class="btn btn-danger" value=<?php echo $rep->get_id(); ?>>Supprimer</button></form></div>
                         <br>
-                        <div><form method="POST" action = "self" name ="note"><select name="noter" id="idnoter">
+                        <div><form method="POST" name ="note"><select name="noter" id="idnoter">
                             <option value="0">0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
