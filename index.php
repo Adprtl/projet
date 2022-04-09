@@ -8,6 +8,17 @@
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.0.13/css/all.css'>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <!--Appli mobile-->
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="apple-touch-icon" href="logo.png">
+    <meta name="apple-mobile-web-app-status-bar" content="white">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="white">
+    <script>
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("sw.js");
+        }
+    </script>
 </head>
 
 <body>
